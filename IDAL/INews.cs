@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,21 @@ namespace IDAL
 {
     public interface INews
     {
+        //得到新闻
+        IEnumerable<News> GetNews();
+        //根据ID得到新闻
+        IEnumerable<News> GetNewsById(int? id);
+        //删除新闻
+        void RemoveNews(News news);
+        //增加新闻
+        void AddNews(News news);
+        //得到最新的新闻
+        IEnumerable<News> GetNewNews();
+        //void EditVideo(Movies video);
+        //void RemoveRangeVideoComment(IQueryable<Message> Message);
+        //IEnumerable<Movies> GetNewVideo();
+        ////IEnumerable<Movies> GetRecommend();
+        //IEnumerable<Movies> GetVideoByVideoKId(int? id);
+        //IEnumerable<Movies> Search(string search);
     }
 }
