@@ -13,9 +13,13 @@ namespace GY.Models
         public IEnumerable<News> GetNewNews { get; set; }
         //得到新闻
         public IEnumerable<News> News1 { get; set; }
-        //根据ID得到新闻
-        public IEnumerable<News> GetNewsById { get; set; }
-        public IEnumerable<News> MoviesTop5 { get; set; }
-        public IEnumerable<News> GetMoviesTpye { get; set; }
+        //展示前几
+        public IQueryable<News> GetNewsbyTop { get; set; }
+        //根据ID展示
+        public News GetNewsById{ get; set; }
+        ////根据ID得到新闻
+        //public IEnumerable<News> GetNewsById { get; set; }
+        //public IEnumerable<News> MoviesTop5 { get; set; }
+        //public IEnumerable<News> GetMoviesTpye { get; set; }
     }
 }

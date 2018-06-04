@@ -44,24 +44,33 @@ namespace DAL
             var news = db.News.ToList();
             return news;
         }
-        /// <summary>
-        /// 根据ID得到新闻
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public IEnumerable<News> GetNewsById(int? id)
-        {
-            var news = from ni in db.News
-                        where ni.NewsID == id
-                        select ni;
-            return news;
-        }
         //删除新闻
         public void RemoveNews(News news)
         {
             db.News.Remove(news);
             db.SaveChanges();
         }
-       
+        /// <summary>
+        /// 展示前几
+        /// </summary>
+        /// <param name="top"></param>
+        /// <returns></returns>
+        public IQueryable<News> GetNewsbyTop(int top)
+        {
+            var news = from n in db.News
+                       orderby n.NewsID descending
+                       select n;
+            return news.Take(top);
+        }
+        /// <summary>
+        /// 根据ID展示
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public News GetNewsById(int? id)
+        {
+            News news = db.News.Find(id);
+            return news;
+        }
     }
 }

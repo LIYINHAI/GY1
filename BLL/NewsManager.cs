@@ -40,22 +40,30 @@ namespace BLL
             return news;
         }
         /// <summary>
-        /// 根据ID得到新闻
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public IEnumerable<News> GetNewsById(int? id)
-        {
-            var getNewsById = inews.GetNewsById(id);
-            return getNewsById;
-        }
-        /// <summary>
         /// 删除新闻
         /// </summary>
         /// <param name="news"></param>
         public void RemoveNews(News news)
         {
             inews.RemoveNews(news);
+        }
+        /// <summary>
+        ///   展示前几
+        /// </summary>
+        public IQueryable<News> GetNewsbyTop(int top)
+        {
+            var getTop = inews.GetNewsbyTop(top);
+            return getTop;
+        }
+        /// <summary>
+        /// 根据ID展示
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public News GetNewsById(int? id)
+        {
+            var GetId = inews.GetNewsById(id);
+            return GetId;
         }
     }
 }
