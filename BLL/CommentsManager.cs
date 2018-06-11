@@ -26,7 +26,18 @@ namespace BLL
         /// <returns></returns>
         public IEnumerable<Comments> GetNewsCom()
         {
-
+            var newsCom = iComments.GetNewsCom();
+            return newsCom;
+        }
+        /// <summary>
+        /// 根据ID得到新闻评论
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Comments GetNewsComById(int? id)
+        {
+            Comments NnewsCom = iComments.GetNewsComById(id);
+            return NnewsCom;
         }
     }
 }

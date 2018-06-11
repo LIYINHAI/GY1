@@ -10,8 +10,12 @@ namespace GY.Controllers
 {
     public class NewsDateilController : Controller
     {
+        /// <summary>
+        /// 实例化
+        /// </summary>
         GYEntities db = new GYEntities();
         NewsManager mv = new NewsManager();
+        CommentsManager newsd = new CommentsManager();
         // GET: NewsDateil
         #region 新闻详情页
         public ActionResult Index()
@@ -45,7 +49,7 @@ namespace GY.Controllers
         [HttpPost]
         [ValidateInput(false)]
         //[Login]
-        public ActionResult Coms(ArticleCom ArticleCom)
+        public ActionResult Coms(Comments newsCom)
         {
 
             int aid = Convert.ToInt32(Session["aid"]);
@@ -55,11 +59,14 @@ namespace GY.Controllers
             {
                 if (textarea != "")
                 {
-                    ArticleCom.UserID = userid;
-                    ArticleCom.ArticleID = aid;
-                    ArticleCom.ComTime = System.DateTime.Now;
-                    ArticleCom.ComContent = textarea;
-                    articlecommanager.AddArticleCom(ArticleCom);
+                    newsCom.UserID = userid;
+                    //新闻ID
+                    newsCom.ThemeID = aid;
+                    newsCom.ComTime = System.DateTime.Now;
+                    //评论内容
+                    newsCom.ComContent = textarea;
+                    //增加评论
+                    newsd.AddNewsCom(newsCom);
                 }
                 else
                 {
