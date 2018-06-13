@@ -16,6 +16,7 @@ namespace GY.Controllers
         GYEntities db = new GYEntities();
         NewsManager mv = new NewsManager();
         CommentsManager newsd = new CommentsManager();
+        ReCommentManager renew = new ReCommentManager();
         // GET: NewsDateil
         #region 新闻详情页
         public ActionResult Index()
@@ -80,6 +81,7 @@ namespace GY.Controllers
             return View();
         }
         [HttpPost]
+        
         public ActionResult ReplyArticleComments(int ArticleComID, ArticleReply replya)
         {
             int aid = Convert.ToInt32(Session["aid"]);
