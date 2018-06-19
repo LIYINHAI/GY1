@@ -82,7 +82,7 @@ namespace GY.Controllers
         }
         [HttpPost]
         
-        public ActionResult ReplyArticleComments(int ArticleComID, ArticleReply replya)
+        public ActionResult ReplyNewsComments(int NewsComID,ReComment replya)
         {
             int aid = Convert.ToInt32(Session["aid"]);
             string replytext = Request.Form["textarea1"];
@@ -93,11 +93,12 @@ namespace GY.Controllers
             else
             {
                 int userid = Convert.ToInt32(Session["UserID"]);
-                replya.ArticleComID = ArticleComID;
+                replya.ComID = NewsComID;
                 replya.UserID = userid;
-                replya.ReplyContent = replytext;
-                replya.ReplyTime = DateTime.Now;
-                articlereplymanager.AddArticleReply(replya);
+                replya.ReComContent = replytext;
+                replya.ReComTime = DateTime.Now;
+                //评论回复
+                renew.
 
             }
             return RedirectToAction("ArticleDetails", "ArticleShow", new { id = aid });
