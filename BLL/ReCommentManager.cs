@@ -31,5 +31,13 @@ namespace BLL
             ReComment newRecom = iReComments.GetNewsReComById(id);
             return newRecom;
         }
+        /// <summary>
+        /// 回复评论
+        /// </summary>
+        /// <param name="NewsReply"></param>
+        public void AddNewsReply(ReComment NewsReply)
+        {
+            iReComments.AddNewsReply(NewsReply);
+        }
     }
 }

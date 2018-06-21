@@ -50,6 +50,7 @@ namespace GY.Controllers
         [HttpPost]
         [ValidateInput(false)]
         //[Login]
+        //评论
         public ActionResult Coms(Comments newsCom)
         {
 
@@ -81,7 +82,7 @@ namespace GY.Controllers
             return View();
         }
         [HttpPost]
-        
+        //回复评论
         public ActionResult ReplyNewsComments(int NewsComID,ReComment replya)
         {
             int aid = Convert.ToInt32(Session["aid"]);
@@ -98,7 +99,7 @@ namespace GY.Controllers
                 replya.ReComContent = replytext;
                 replya.ReComTime = DateTime.Now;
                 //评论回复
-                renew.
+                renew.AddNewsReply(replya);
 
             }
             return RedirectToAction("ArticleDetails", "ArticleShow", new { id = aid });

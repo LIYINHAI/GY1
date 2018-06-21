@@ -31,5 +31,14 @@ namespace DAL
             ReComment recomments= db.ReComment.Find(id);
             return recomments;
         }
+        /// <summary>
+        /// 增加回复评论
+        /// </summary>
+        /// <param name="NewsReply"></param>
+        public void AddNewsReply(ReComment NewsReply)
+        {
+            db.ReComment.Add(NewsReply);
+            db.SaveChanges();
+        }
     }
 }

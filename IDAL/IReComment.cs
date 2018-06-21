@@ -21,9 +21,9 @@ namespace IDAL
         /// <returns></returns>
         ReComment GetNewsReComById(int? id);
         /// <summary>
-        /// 评论
+        /// 回复评论
         /// </summary>
         /// <param name="newsCom"></param>
-        //void AddNewsReCom(ReComment newsReCom);
+        void AddNewsReply(ReComment NewsReply);
     }
 }
