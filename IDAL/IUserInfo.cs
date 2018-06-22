@@ -33,6 +33,13 @@ namespace IDAL
         /// </summary>
         /// <param name="userInfo"></param>
         void UpdateUserInfo(UserInfo userInfo);
-        //显示用户的评论
+        /// <summary>
+        /// 根据ID得到评论
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Comments GetCommById(int? id);
+
+
     }
 }

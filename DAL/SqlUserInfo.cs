@@ -63,5 +63,14 @@ namespace DAL
              var userInfo = db.UserInfo.Where(c => c.UserName == UserName);
              return userInfo;
          }
+        /// <summary>
+        /// 根据ID得到评论
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Comments GetCommById(int? id)
+        {
+            
+        }
     }
 }
