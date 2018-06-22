@@ -9,12 +9,30 @@ namespace IDAL
 {
     public interface IUserInfo
     {
-        void AddUserInfo(UserInfo userInfo);      
+        /// <summary>
+        /// 注册用户
+        /// </summary>
+        /// <param name="userInfo"></param>
+        void AddUserInfo(UserInfo userInfo);
+        //登陆      
         UserInfo Login(string UserName, string Password);
+        /// <summary>
+        /// 得到用户通过用户名
+        /// </summary>
+        /// <param name="UsersName"></param>
+        /// <returns></returns>
         UserInfo GetUserName(string UsersName);
-        void UpdateUserInfo(UserInfo userInfo);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="UsersName"></param>
+        /// <returns></returns>
         IEnumerable<UserInfo> IEGetUserName(string UsersName);
-        //IEnumerable<UserInfo> Jifenpaihang10();
-        //IEnumerable<UserInfo> Search(string search);
+        /// <summary>
+        /// 修改用户
+        /// </summary>
+        /// <param name="userInfo"></param>
+        void UpdateUserInfo(UserInfo userInfo);
+        //显示用户的评论
     }
 }

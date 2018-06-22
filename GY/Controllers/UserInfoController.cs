@@ -12,6 +12,7 @@ namespace GY.Controllers
     public class UserInfoController : Controller
     {
         UserInfoManager userinfomanager = new UserInfoManager();
+        GYEntities db = new GYEntities();
         //PostManager postManager = new PostManager();
         // GET: UserInfo
         public ActionResult Index()
@@ -68,6 +69,65 @@ namespace GY.Controllers
                 return Content("<script>;alert('注册失败！');history.go(-1)</script>");
             }
         }       
+        #endregion
+        #region 修改资料
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Ziliao(UserInfo userInfo)
+        {
+            HttpPostedFileBase userImage = Request.Files["UserImage"];
+            try
+            {
+                if (userImage.FileName != "")
+                {
+                    string filePath = userImage.FileName;
+                    string filename = DateTime.Now.ToString("yyyyMMddHHmmssfffffff") +
+                                      filePath.Substring(filePath.LastIndexOf("\\") + 1);
+                    string serverpath = Server.MapPath(@"\Images\userInfo\") + filename;
+                    string relativepath = @"/Images/userInfo/" + filename;
+                    userImage.SaveAs(serverpath);
+                    userInfo.UserImage = relativepath;
+                }
+                else
+                {
+                    userInfo.UserImage = db.UserInfo.Find(userInfo.UserID).UserImage;
+                }
+                if (ModelState.IsValid)
+                {
+                    //图片
+                    userInfo.UserImage = db.UserInfo.Find(userInfo.UserID).UserImage;
+                    //用户名
+                    userInfo.UserName = db.UserInfo.Find(userInfo.UserID).UserName;
+                    //密码
+                    userInfo.Password = db.UserInfo.Find(userInfo.UserID).Password;
+                    //邮箱
+                    userInfo.Email = db.UserInfo.Find(userInfo.UserID).Email;
+                    //手机号
+                    userInfo.Phone = db.UserInfo.Find(userInfo.UserID).Phone;
+                    //修改语句
+                    userinfomanager.UpdateUserInfo(userInfo);
+                    //db.Post.Add(post);
+                    //db.SaveChanges();
+                    //return RedirectToAction("Index");
+                    //return "aa";
+                    return RedirectToAction("UserCenter", "UserInfo", new { Users_id = userInfo.UserID });
+                    //return Content("<script>;alert('修改成功！');</script>");
+                }
+                else
+                {
+                    //return "bb";
+                    return Content("<script>;alert('修改失败！');window.history.go(-1);window.location.reload();</script>");
+                }
+            }
+            catch (Exception ex)
+            {
+                //return ex.ToString();
+                return Content(ex.Message);
+            }
+        }
+        #endregion
+        #region 个人中心
+       
         #endregion
         #region 注销
         [HttpPost]
