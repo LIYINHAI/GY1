@@ -11,5 +11,6 @@ namespace GY.Models
         public IEnumerable<Comments> viewcomment { get; set; }
         public IEnumerable<ReComment> vierecomment { get; set; }
         public IEnumerable<UserInfo> viewUserInfo{ get; set; }
+        public UserInfo user { get; set; }  //用来修改资料
     }
 }

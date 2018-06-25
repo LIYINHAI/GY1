@@ -300,6 +300,7 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\UserInfo\userindex.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
