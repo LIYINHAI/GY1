@@ -13,19 +13,20 @@ namespace GY.Controllers
     {
         GYEntities db = new GYEntities();
         NewsManager mv = new NewsManager();
-        NewsViewMode newsviewmode = new NewsViewMode();
         // GET: News
         public ActionResult Index()
         {
-            newsviewmode.News = mv.GetNews();
-           // newsviewmode.news = mv.GetNewNews();      
+            NewsViewMode nvmd = new NewsViewMode();
             //得到新闻
-           // newsviewmode.GetNewNews= mv.GetNews();
-            //得到最新的新闻
-            newsviewmode.GetNewNews = mv.GetNewNews().Take(6);
-            //根据ID得到新闻
-            //newsviewmode.GetNewsById = mv.GetNewsById(id);
-            return View(newsviewmode);
+            var getnew = mv.GetNews();
+            nvmd.GetNews = getnew;
+            //得到最新新闻
+            var getnnew = mv.GetNewNews();
+            nvmd.GetNewNews = getnnew;
+            //得到前6的新闻
+            var gettop6 = mv.GetNewsbyTop(6);
+            nvmd.GetNewsbyTop = gettop6;
+            return View(nvmd);
         }
     }
 }

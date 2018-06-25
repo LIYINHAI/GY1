@@ -48,9 +48,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </form>
                 </div>
                 <div class="header-top-right">
-                    <div class="file">
+                    @*<div class="file">
                         <a href="upload.html">Upload</a>
-                    </div>
+                    </div>*@
                     <div class="signin">
                         <a href="#small-dialog2" class="play-icon popup-with-zoom-anim">Sign Up</a>
                         <!-- pop-up-box -->
@@ -290,7 +290,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </div>
-    @foreach(var ne in Model.News) {
+    @foreach(var ne in Model.GetNews) {
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         @*右边新闻页面*@
         <div class="main-grids">
