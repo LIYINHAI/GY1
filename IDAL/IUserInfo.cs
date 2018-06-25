@@ -39,7 +39,12 @@ namespace IDAL
         /// <param name="id"></param>
         /// <returns></returns>
         Comments GetCommById(int? id);
-
+        /// <summary>
+        /// 根据id得到回复评论
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        ReComment GetReCommById(int? id);
 
     }
 }
