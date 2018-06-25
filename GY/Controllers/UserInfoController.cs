@@ -22,6 +22,7 @@ namespace GY.Controllers
         {
             //得到ID
             Session["UserID"] = userid;
+            ucvm.user = db.UserInfo.Find(userid);
 
             //根据ID显示评论
             ucvm.viewcomment = userinfomanager.GetCommById(userid);

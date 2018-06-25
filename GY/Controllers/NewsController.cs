@@ -13,11 +13,12 @@ namespace GY.Controllers
     {
         GYEntities db = new GYEntities();
         NewsManager mv = new NewsManager();
+        NewsViewMode newsviewmode = new NewsViewMode();
         // GET: News
         public ActionResult Index()
         {
-            NewsViewMode newsviewmode = new NewsViewMode();
 
+           // newsviewmode.news = mv.GetNewNews();      
             //得到新闻
             newsviewmode.News1 = mv.GetNews();
             //得到最新的新闻
