@@ -21,11 +21,5 @@ namespace IDAL
         IEnumerable<News> GetNewNews();
         //展示前几
         IQueryable<News> GetNewsbyTop(int top);
-        //void EditVideo(Movies video);
-        //void RemoveRangeVideoComment(IQueryable<Message> Message);
-        //IEnumerable<Movies> GetNewVideo();
-        ////IEnumerable<Movies> GetRecommend();
-        //IEnumerable<Movies> GetVideoByVideoKId(int? id);
-        //IEnumerable<Movies> Search(string search);
     }
 }

@@ -16,6 +16,7 @@ namespace Model
     {
         public int NewsID { get; set; }
         public int UserID { get; set; }
+        public string NewsImg { get; set; }
         public string NewsTitle { get; set; }
         public Nullable<System.DateTime> NewsTime { get; set; }
         public string Contents { get; set; }

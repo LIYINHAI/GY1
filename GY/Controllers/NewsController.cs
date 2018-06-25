@@ -17,10 +17,10 @@ namespace GY.Controllers
         // GET: News
         public ActionResult Index()
         {
-
+            newsviewmode.News = mv.GetNews();
            // newsviewmode.news = mv.GetNewNews();      
             //得到新闻
-            newsviewmode.News1 = mv.GetNews();
+           // newsviewmode.GetNewNews= mv.GetNews();
             //得到最新的新闻
             newsviewmode.GetNewNews = mv.GetNewNews().Take(6);
             //根据ID得到新闻

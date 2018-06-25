@@ -12,7 +12,7 @@ namespace GY.Models
         //得到最新新闻
         public IEnumerable<News> GetNewNews { get; set; }
         //得到新闻
-        public IEnumerable<News> News1 { get; set; }
+        public IEnumerable<News> News { get; set; }
         //展示前几
         public IQueryable<News> GetNewsbyTop { get; set; }
         //根据ID展示
