@@ -68,9 +68,30 @@ namespace DAL
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Comments GetCommById(int? id)
+        public IEnumerable<Comments> GetCommById(int id)
         {
-            
+            var getCom = db.Comments.Where(u => u.UserID == id);
+            return getCom;   
+        }
+        /// <summary>
+        /// 根据id得到回复评论
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IEnumerable<ReComment> GetReCommById(int? id)
+        {
+            var GetReCom = db.ReComment.Where(u => u.UserID == id);
+            return GetReCom;
+        }
+        /// <summary>
+        /// 根据ID得到用户信息
+        /// </summary>
+        /// <param name="UsersID"></param>
+        /// <returns></returns>
+        public IEnumerable<UserInfo> IEGetUser(int usersid)
+        {
+            var GetUser = db.UserInfo.Where(u => u.UserID == usersid);
+            return GetUser;
         }
     }
 }

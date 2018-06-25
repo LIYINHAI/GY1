@@ -29,6 +29,12 @@ namespace IDAL
         /// <returns></returns>
         IEnumerable<UserInfo> IEGetUserName(string UsersName);
         /// <summary>
+        /// 根据ID得到用户信息
+        /// </summary>
+        /// <param name="UsersID"></param>
+        /// <returns></returns>
+        IEnumerable<UserInfo> IEGetUser(int UsersID);
+        /// <summary>
         /// 修改用户
         /// </summary>
         /// <param name="userInfo"></param>
@@ -38,13 +44,13 @@ namespace IDAL
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Comments GetCommById(int? id);
+        IEnumerable<Comments> GetCommById(int id);
         /// <summary>
         /// 根据id得到回复评论
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        ReComment GetReCommById(int? id);
+        IEnumerable<ReComment> GetReCommById(int? id);
 
     }
 }

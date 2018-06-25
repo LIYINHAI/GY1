@@ -51,5 +51,35 @@ namespace BLL
         {
             iuserinfo.UpdateUserInfo(userInfo);
         }
+        /// <summary>
+        /// 根据ID得到评论
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IEnumerable<Comments> GetCommById(int id)
+        {
+            var userinfo = iuserinfo.GetCommById(id);
+            return userinfo;
+        }
+        /// <summary>
+        /// 根据id得到回复评论
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IEnumerable<ReComment> GetReCommById(int? id)
+        {
+            var user = iuserinfo.GetReCommById(id);
+            return user;
+        }
+        /// <summary>
+        /// 根据ID得到用户信息
+        /// </summary>
+        /// <param name="UsersID"></param>
+        /// <returns></returns>
+        public IEnumerable<UserInfo> IEGetUser(int usersid)
+        {
+            var alluser = iuserinfo.IEGetUser(usersid);
+            return alluser;
+        }
     }
 }

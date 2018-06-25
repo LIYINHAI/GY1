@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Services.Protocols;
 using BLL;
 using Model;
+using GY.Models;
 
 namespace GY.Controllers
 {
@@ -13,11 +14,22 @@ namespace GY.Controllers
     {
         UserInfoManager userinfomanager = new UserInfoManager();
         GYEntities db = new GYEntities();
+         UserViewMode ucvm = new UserViewMode();
         //PostManager postManager = new PostManager();
         // GET: UserInfo
-        public ActionResult Index()
+        //个人显示
+        public ActionResult Index(int userid )
         {
-            return View();
+            //得到ID
+            Session["UserID"] = userid;
+
+            //根据ID显示评论
+            ucvm.viewcomment = userinfomanager.GetCommById(userid);
+            //根据ID显示回复评论
+            ucvm.vierecomment = userinfomanager.GetReCommById(userid);
+            //根据ID显示个人资料
+            ucvm.viewUserInfo = userinfomanager.IEGetUser(userid);
+            return View(ucvm);
         }
         #region 登录
         public ActionResult Login()
