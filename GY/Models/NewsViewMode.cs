@@ -16,7 +16,7 @@ namespace GY.Models
         //展示前几
         public IQueryable<News> GetNewsbyTop { get; set; }
         ////根据ID展示
-        //public News GetNewsById{ get; set; }
+        public News GetNewsById{ get; set; }
         public News news { get; set; }  //用来修改资料
     }
 }

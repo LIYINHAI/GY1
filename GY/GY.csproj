@@ -302,6 +302,7 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\UserInfo\userindex.cshtml" />
     <Content Include="Views\NewsDateil\NewsDateilView.cshtml" />
+    <Content Include="Views\NewsDateil\ArticleDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

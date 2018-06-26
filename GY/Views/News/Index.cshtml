@@ -28,7 +28,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //fonts -->
 </head>
 <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -49,8 +48,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="header-top-right">
                     @*<div class="file">
-                        <a href="upload.html">Upload</a>
-                    </div>*@
+                            <a href="upload.html">Upload</a>
+                        </div>*@
                     <div class="signin">
                         <a href="#small-dialog2" class="play-icon popup-with-zoom-anim">Sign Up</a>
                         <!-- pop-up-box -->
@@ -282,11 +281,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							});
 							});
             </script>
-            <div class="side-bottom">        
+            <div class="side-bottom">
                 @*著作标*@
                 @*<div class="copyright">
-                    <p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-                </div>*@
+                        <p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+                    </div>*@
             </div>
         </div>
     </div>
@@ -306,26 +305,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-@foreach (var ne in Model.GetNewsbyTop)
-{
-                    @*1*@
-                    <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-                        <div class="resent-grid-img recommended-grid-img">
-                            <a href="single.html"><img src="@ne.NewsImg" alt="" /></a>
-                            <div class="time small-time sports-tome">
-                                <p>NewsTime</p>
+                    @foreach (var ne in Model.GetNewsbyTop)
+                    {
+                        @*1*@
+                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
+                            <div class="resent-grid-img recommended-grid-img">
+                                <a href="@Url.Action("NewsDateilView","NewsDateil")" >
+                                    <img src="@ne.NewsImg" alt="" />
+                                </a>
+                                <div class="time small-time sports-tome">
+                                    <p>NewsTime</p>
+                                </div>
+                                <div class="clck sports-clock">
+                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                </div>
                             </div>
-                            <div class="clck sports-clock">
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            <div class="resent-grid-info recommended-grid-info">
+                                <h5><a href="@Url.Action("NewsDateilView","NewsDateil")" >@ne.Contents</a></h5>
+                                @*<p class="author"><a href="#" class="author">John Maniya</a></p>
+                                    <p class="views">2,114,200 views</p>*@
                             </div>
                         </div>
-                        <div class="resent-grid-info recommended-grid-info">
-                            <h5><a href="single.html" class="title">@ne.Contents</a></h5>
-                            @*<p class="author"><a href="#" class="author">John Maniya</a></p>
-                            <p class="views">2,114,200 views</p>*@
-                        </div>
-                    </div>
-}
+                    }
                     <div class="clearfix"> </div>
                 </div>
             </div>
@@ -343,22 +344,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     @foreach (var nnew in Model.GetNewNews)
                     {
-                    <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-                        <div class="resent-grid-img recommended-grid-img">
-                            <a href="single.html"><img src="@nnew.NewsImg" alt="" /></a>
-                            <div class="time small-time sports-tome">
-                                <p>7:30</p>
+                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
+                            <div class="resent-grid-img recommended-grid-img">
+                                <a href="single.html"><img src="@nnew.NewsImg" alt="" /></a>
+                                <div class="time small-time sports-tome">
+                                    <p>7:30</p>
+                                </div>
+                                <div class="clck sports-clock">
+                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                </div>
                             </div>
-                            <div class="clck sports-clock">
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            <div class="resent-grid-info recommended-grid-info">
+                                <h5><a href="single.html" class="title">@nnew.Contents</a></h5>
+                                <p class="author"><a href="#" class="author">John Maniya</a></p>
+                                <p class="views">2,114,200 views</p>
                             </div>
                         </div>
-                        <div class="resent-grid-info recommended-grid-info">
-                            <h5><a href="single.html" class="title">@nnew.Contents</a></h5>
-                            <p class="author"><a href="#" class="author">John Maniya</a></p>
-                            <p class="views">2,114,200 views</p>
-                        </div>
-                    </div>
                     }
                     <div class="clearfix"> </div>
                 </div>
@@ -375,102 +376,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="clearfix"> </div>
                     </div>
+                    @foreach(var nnews in Model.GetNewNews) { 
                     <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
                         <div class="resent-grid-img recommended-grid-img">
-                            <a href="single.html"><img src="images/sp4.jpg" alt="" /></a>
+                            <a href="single.html"><img src="@nnews.NewsImg" alt="" /></a>
                             <div class="time small-time sports-tome">
-                                <p>7:30</p>
-                            </div>
+                                <p>@nnews.NewsTime</p>
+                         </div>
                             <div class="clck sports-clock">
                                 <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                            </div>
-                        </div>
+                         </div>
+                      </div>
                         <div class="resent-grid-info recommended-grid-info">
-                            <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+                            <h5><a href="single.html" class="title">@nnews.NewsTitle</a></h5>
                             <p class="author"><a href="#" class="author">John Maniya</a></p>
                             <p class="views">2,114,200 views</p>
-                        </div>
+                       </div>
                     </div>
-                    <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-                        <div class="resent-grid-img recommended-grid-img">
-                            <a href="single.html"><img src="images/g2.jpg" alt="" /></a>
-                            <div class="time small-time sports-tome">
-                                <p>9:34</p>
-                            </div>
-                            <div class="clck sports-clock">
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <div class="resent-grid-info recommended-grid-info">
-                            <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-                            <p class="author"><a href="#" class="author">John Maniya</a></p>
-                            <p class="views">2,114,200 views</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-                        <div class="resent-grid-img recommended-grid-img">
-                            <a href="single.html"><img src="images/sp1.jpg" alt="" /></a>
-                            <div class="time small-time sports-tome">
-                                <p>5:34</p>
-                            </div>
-                            <div class="clck sports-clock">
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <div class="resent-grid-info recommended-grid-info">
-                            <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-                            <p class="author"><a href="#" class="author">John Maniya</a></p>
-                            <p class="views">2,114,200 views</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-                        <div class="resent-grid-img recommended-grid-img">
-                            <a href="single.html"><img src="images/sp6.jpg" alt="" /></a>
-                            <div class="time small-time sports-tome">
-                                <p>6:55</p>
-                            </div>
-                            <div class="clck sports-clock">
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <div class="resent-grid-info recommended-grid-info">
-                            <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-                            <p class="author"><a href="#" class="author">John Maniya</a></p>
-                            <p class="views">2,114,200 views</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-                        <div class="resent-grid-img recommended-grid-img">
-                            <a href="single.html"><img src="images/g3.jpg" alt="" /></a>
-                            <div class="time small-time sports-tome">
-                                <p>8:04</p>
-                            </div>
-                            <div class="clck sports-clock">
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <div class="resent-grid-info recommended-grid-info">
-                            <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-                            <p class="author"><a href="#" class="author">John Maniya</a></p>
-                            <p class="views">2,114,200 views</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-                        <div class="resent-grid-img recommended-grid-img">
-                            <a href="single.html"><img src="images/sp2.jpg" alt="" /></a>
-                            <div class="time small-time sports-tome">
-                                <p>7:34</p>
-                            </div>
-                            <div class="clck sports-clock">
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <div class="resent-grid-info recommended-grid-info">
-                            <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-                            <p class="author"><a href="#" class="author">John Maniya</a></p>
-                            <p class="views">2,114,200 views</p>
-                        </div>
-                    </div>
+                    }
                     <div class="clearfix"> </div>
                 </div>
             </div>
@@ -479,11 +402,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         @*右下*@
         <div class="footer">
             <div class="footer-grids">
-               
+
             </div>
         </div>
         <!-- //footer -->
-    </div> 
+    </div>
     <div class="clearfix"> </div>
     <div class="drop-menu">
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
