@@ -259,9 +259,11 @@
     <Content Include="images\we4.jpg" />
     <Content Include="images\whatsapp.png" />
     <Content Include="js\background.js" />
+    <Content Include="js\boo.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.11.1.min.js" />
     <Content Include="js\jquery.magnific-popup.js" />
+    <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.polyglot.language.switcher.js" />
     <Content Include="js\modernizr.custom.min.js" />
     <Content Include="js\particles.js" />
@@ -278,6 +280,7 @@
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\NewsDateilController.cs" />
+    <Compile Include="Controllers\UserCenterController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -306,7 +309,7 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\UserInfo\userindex.cshtml" />
     <Content Include="Views\NewsDateil\ArticleDetails.cshtml" />
-    <Content Include="Views\UserInfo\Ziliao.cshtml" />
+    <Content Include="Views\UserCenter\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

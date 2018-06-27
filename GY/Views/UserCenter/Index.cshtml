@@ -1,8 +1,9 @@
 ﻿@model Model.UserInfo
 @{
-    ViewBag.Title = "UserCenter";
+    ViewBag.Title = "Index";
 }
 
+<h2>Index</h2>
 <h2>UserCenter</h2>
 <link href="~/assets/css/UserCenter.css" rel="stylesheet" />
 <div class="kongge"></div>
@@ -56,13 +57,13 @@
                                 <td>@Model.UserID</td>
                                 <td>&nbsp;</td>
                             </tr>
-                            <tr id="tr_qq">
+                            @*<tr id="tr_qq">
                                 <th id="th_qq">用户头像:</th>
                                 <td id="td_qq">
                                     <input id="Text1" type="file" name="Photo" value="Photo" />
                                 </td>
 
-                            </tr>
+                            </tr>*@
                             <tr id="tr_qq">
                                 <th id="th_qq">用户名:</th>
                                 <td id="td_qq">
@@ -79,12 +80,12 @@
 
                             </tr>
                             @*<tr id="tr_gender">
-                                <th id="th_gender">手机:</th>
-                                <td id="td_gender">
-                                    <input id="Text1" type="text" name="Birth" value="@Model.Birth" />
-                                </td>
+                                    <th id="th_gender">手机:</th>
+                                    <td id="td_gender">
+                                        <input id="Text1" type="text" name="Birth" value="@Model.Birth" />
+                                    </td>
 
-                            </tr>*@
+                                </tr>*@
                             <tr id="tr_qq">
                                 <th id="th_qq">邮箱:</th>
                                 <td id="td_qq">
@@ -137,4 +138,5 @@
     </div>
 </div>
 <script type='text/javascript' src='~/assets/js/jquery.min.js'></script>
-<script src="~/assets/js/bootstrap.min.js"></script>
+<script src="~/js/boo.js"></script>
+

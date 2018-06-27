@@ -33,7 +33,7 @@ namespace IDAL
         /// </summary>
         /// <param name="UsersID"></param>
         /// <returns></returns>
-        IEnumerable<UserInfo> IEGetUser(int UsersID);
+        UserInfo IEGetUser(int UsersID);
         /// <summary>
         /// 修改用户
         /// </summary>

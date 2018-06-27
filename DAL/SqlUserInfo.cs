@@ -88,9 +88,9 @@ namespace DAL
         /// </summary>
         /// <param name="UsersID"></param>
         /// <returns></returns>
-        public IEnumerable<UserInfo> IEGetUser(int usersid)
+        public UserInfo IEGetUser(int usersid)
         {
-            var GetUser = db.UserInfo.Where(u => u.UserID == usersid);
+            UserInfo GetUser = db.UserInfo.Find(usersid);
             return GetUser;
         }
     }

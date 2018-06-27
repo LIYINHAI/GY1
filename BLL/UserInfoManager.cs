@@ -76,9 +76,9 @@ namespace BLL
         /// </summary>
         /// <param name="UsersID"></param>
         /// <returns></returns>
-        public IEnumerable<UserInfo> IEGetUser(int usersid)
+        public UserInfo IEGetUser(int usersid)
         {
-            var alluser = iuserinfo.IEGetUser(usersid);
+            UserInfo alluser = iuserinfo.IEGetUser(usersid);
             return alluser;
         }
     }
