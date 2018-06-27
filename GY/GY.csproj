@@ -257,12 +257,15 @@
     <Content Include="images\we3.jpg" />
     <Content Include="images\we4.jpg" />
     <Content Include="images\whatsapp.png" />
+    <Content Include="js\background.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.11.1.min.js" />
     <Content Include="js\jquery.magnific-popup.js" />
     <Content Include="js\jquery.polyglot.language.switcher.js" />
     <Content Include="js\modernizr.custom.min.js" />
+    <Content Include="js\particles.js" />
     <Content Include="js\responsiveslides.min.js" />
+    <Content Include="style\register-login.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
