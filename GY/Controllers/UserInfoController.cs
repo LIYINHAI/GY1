@@ -38,7 +38,7 @@ namespace GY.Controllers
             return View();
         }
         [HttpPost]
-        public string Login([Bind(Include = "UserName,Password")]string UserName, string Password)
+        public ActionResult Login([Bind(Include = "UserName,Password")]string UserName, string Password)
         {
             try
             {
@@ -47,20 +47,19 @@ namespace GY.Controllers
                 {
                     //保存到Session HttpContext.
                     Session["UserName"] = UserName;
-                    //Session["UserImage"] = userinfomanager.GetUserName(UserName).UserImage;
-                    string data = "登录成功";
-                    return data;
+                    System.Web.HttpContext.Current.Session["UserID"] = users.UserID; //将用户名放入session中                    
+                    return Content("<script>;alert('登录成功!返回首页!');window.location.href='/Index/Index'</script>");
                 }
                 else
                 {
-                    string data = "登录失败";
-                    return data;
+                    //string data = "登录失败";
+                    //return data;
+                    return Content("<script>;alert('该账号不存在!');history.go(-1)</script>");
                 }
             }
             catch (Exception ex)
             {
-                string data = "错误";
-                return data;
+                return Content(ex.Message);
             }
         }
         #endregion
@@ -74,8 +73,8 @@ namespace GY.Controllers
         {
             if (ModelState.IsValid)
             {               
-                userinfomanager.AddUserInfo(userInfo);
-                return Content("<script>;alert('注册成功!');window.history.go(-2); window.location.reload(); </script>");
+                userinfomanager.AddUserInfo(userInfo);               
+                return Content("<script>;alert('注册成功!进入首页!');window.location.href='/Index/Index'</script>");             
             }
             else
             {

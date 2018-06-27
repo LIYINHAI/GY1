@@ -14,6 +14,56 @@
     <link href="~/style/register-login.css" rel="stylesheet" />
 </head>
 <body>
-    
+    <div id="box"></div>
+    <div class="cent-box register-box">
+        <div class="cent-box-header">
+            <h1 class="main-title hide">光影</h1>
+            <h2 class="sub-title">—电影演绎人生—</h2>
+        </div>
+        <div class="cont-main clearfix">
+            <div class="index-tab">
+                <div class="index-slide-nav">
+                    <a href="@Url.Action("Login","UserInfo")">登录</a>
+                    <a href="@Url.Action("Register","UserInfo")" class="active">注册</a>
+                    <div class="slide-bar slide-bar1"></div>
+                </div>
+            </div>
+
+            @using (Html.BeginForm("Register", "UserInfo", FormMethod.Post))
+            {
+                <div class="login form">
+                    <div class="group">                       
+                        <div class="group-ipt user">
+
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "ipt", placeholder = "用户名" })
+                            @Html.ValidationMessageFor(m => m.UserName)
+                        </div>
+                        <div class="group-ipt password">
+
+                            @Html.TextBoxFor(m => m.Password, new { @class = "ipt", placeholder = "设置登录密码" })
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>  
+                        <div class="group-ipt email">
+
+                            @Html.TextBoxFor(m => m.Email, new { @class = "ipt", placeholder = "电子邮箱" })
+                            @Html.ValidationMessageFor(m => m.Email, "")
+                        </div>                                           
+                    </div>
+                </div>
+
+                <div class="button">
+                    <button type="submit" class="login-btn register-btn" id="button">注册</button>
+                </div>
+            }
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>光影</p>
+        <p>Designed By x-3522工作室 & <a href=""></a> 2018</p>
+    </div>  
 </body>
 </html>
+<script src="~/js/particles.js"></script>
+<script src="~/js/background.js"></script>
