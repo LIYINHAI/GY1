@@ -1,0 +1,140 @@
+﻿@model Model.UserInfo
+@{
+    ViewBag.Title = "UserCenter";
+}
+
+<h2>UserCenter</h2>
+<link href="~/assets/css/UserCenter.css" rel="stylesheet" />
+<div class="kongge"></div>
+<div class="page">
+    <div class="title">
+        <div class="kongge"></div>
+        <div class="image">
+            <img src="~/@Model.UserImage" width="150" height="150" />
+        </div>
+        <div class="kongge"></div>
+        <div class="title1">
+            <a href="#zhanshi" data-toggle="tab" style="color:black">个人信息</a>
+        </div>
+        <div class="title2"></div>
+        <div class="title1" data-toggle="tab">
+            <a href="#bianji" data-toggle="tab" style="color:black">编辑信息</a>
+        </div>
+        <div class="title2"></div>
+        <div class="title1">
+            <a href="#order" data-toggle="tab" style="color:black">我的评论</a>
+        </div>
+        <div class="title2"></div>
+        <div class="title1">
+            <a href="#cart" data-toggle="tab" style="color:black">我的回复</a>
+        </div>
+        <div class="title2"></div>
+    </div>
+    <div class="content">
+        <div class="tubiao">
+            <br /><br /><br />
+            <img src="~/assets/images/logo.png" width="171" height="60" />
+        </div>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="zhanshi">
+                <div class="content1">
+                    @*<br /><br /><br /><br /><br /><br /><br />*@
+                    <p>用户名:@Model.UserName</p>
+                    <p>密码Model.Password</p>
+                    <p>电话:@Model.Phone</p>
+                    <p>邮箱:@Model.Email</p>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="bianji">
+                <form action="/UserCenter/UserCenter1/" method="post">
+
+                    <table cellspacing="0" cellpadding="0" class="tfm" id="profilelist">
+                        <tbody>
+                            <tr>
+                                <th>用户ID</th>
+                                <td>@Model.UserID</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr id="tr_qq">
+                                <th id="th_qq">用户头像:</th>
+                                <td id="td_qq">
+                                    <input id="Text1" type="file" name="Photo" value="Photo" />
+                                </td>
+
+                            </tr>
+                            <tr id="tr_qq">
+                                <th id="th_qq">用户名:</th>
+                                <td id="td_qq">
+                                    <input id="Text1" type="text" name="UserName" value="@Model.UserName" />
+                                </td>
+
+                            </tr>
+
+                            <tr id="tr_gender">
+                                <th id="th_gender">密码:</th>
+                                <td id="td_gender">
+                                    <input id="Text1" type="text" name="Sex" value="@Model.Password" />
+                                </td>
+
+                            </tr>
+                            @*<tr id="tr_gender">
+                                <th id="th_gender">手机:</th>
+                                <td id="td_gender">
+                                    <input id="Text1" type="text" name="Birth" value="@Model.Birth" />
+                                </td>
+
+                            </tr>*@
+                            <tr id="tr_qq">
+                                <th id="th_qq">邮箱:</th>
+                                <td id="td_qq">
+                                    <input id="Text1" type="text" name="Email" value="@Model.Email" />
+                                </td>
+
+                            </tr>
+                            <tr id="tr_bio">
+                                <th id="th_bio">电话</th>
+                                <td id="td_bio">
+                                    <input id="Text1" type="text" name="Phone" value="@Model.Phone" />
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <td colspan="2">
+                                    <button type="submit" name="profilesubmitbtn" id="profilesubmitbtn" value="true" class="pn pnc"><strong>保存</strong></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="order">
+
+            </div>
+            <div class="tab-pane fade" id="cart">
+                <br /><br /><br /><br /><br />
+                <table class="auto-style16">
+                    <tr>
+                        <td class="auto-style11">商品名称</td>
+                        <td class="auto-style7">商品图片</td>
+                        <td class="auto-style22">单价</td>
+                        <td class="auto-style24">数量</td>
+                        <td class="auto-style17">总价</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style12">帆布包</td>
+                        <td class="auto-style13">
+                            <img src="~/images/SCZ2.jpg" width="100" height="60" />
+                        </td>
+                        <td class="auto-style23">20</td>
+                        <td class="auto-style25">3</td>
+                        <td class="auto-style15">60</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script type='text/javascript' src='~/assets/js/jquery.min.js'></script>
+<script src="~/assets/js/bootstrap.min.js"></script>

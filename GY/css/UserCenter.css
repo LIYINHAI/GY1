@@ -1,0 +1,129 @@
+﻿body {
+    margin:0px;
+}
+.page{
+    width:800px;
+    height:530px;
+    border-radius:80px;
+    margin:auto;
+    background-color:white; 
+    border:15px solid #ffffff;
+}
+.title{
+    width:160px;
+    height:530px;
+    float:left;
+    
+    /*background-color:aquamarine;*/
+}
+.image{
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    border: 2px solid #808080;
+    overflow: hidden;
+}
+.kongge{
+    height:30px;
+    width:150px;
+}
+.title1{
+    width:154px;
+    height:35px;
+    background-color:aliceblue;
+    border:2px solid #000000;
+    font-size:25px;
+    font-family:KaiTi;
+    text-align:center;
+    border-radius: 20%;
+    color:black;
+   
+   
+}
+.title2{
+    width:154px;
+    height:20px;
+    
+ }
+.content{
+    width:530px;
+    height:530px;
+    float:right;
+}
+.content1{
+    height:500px;
+    width:300px;    
+    text-align:left;
+    font-size:20px;   
+    font-family:KaiTi;
+    margin-left:60px;
+}
+.tubiao{
+    height:200px;
+    width:530px;
+    text-align:center;
+}
+    .auto-style7 {
+            width: 287px;
+            height: 36px;
+            text-align: center;
+           border: 2px solid #000000;
+        }
+        .auto-style11 {
+            width: 153px;
+            height: 36px;
+            text-align: center;
+            border: 2px solid #000000;
+        }
+        .auto-style12 {
+            width: 153px;
+            height: 98px;
+            border: 2px solid #000000;
+             text-align: center;
+        }
+        .auto-style13 {
+            width: 287px;
+            height: 98px;
+            border: 2px solid #000000;
+            text-align:center;
+        }
+        .auto-style15 {
+            height: 98px;
+            width:100px;
+             text-align: center;
+            border: 2px solid #000000;
+        }
+        .auto-style16 {
+            width: 79%;
+            height: 134px;
+            border: 2px solid #000000;
+             text-align: center;
+        }
+        .auto-style17 {
+            height: 36px;
+            text-align: center;
+            border: 2px solid #000000;
+        }
+        .auto-style22 {
+            width: 95px;
+            height: 36px;
+            text-align: center;
+            border: 2px solid #000000;
+        }
+        .auto-style23 {
+            width: 95px;
+            height: 98px;
+            border: 2px solid #000000;
+             text-align: center;
+        }
+        .auto-style24 {
+            width: 97px;
+            height: 36px;
+            text-align: center;
+            border: 2px solid #000000;
+        }
+        .auto-style25 {
+            width: 97px;
+            height: 98px;
+            border: 2px solid #000000;
+        }

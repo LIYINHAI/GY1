@@ -123,6 +123,7 @@
     <Content Include="css\dashboard.css" />
     <Content Include="css\popuo-box.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\UserCenter.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -305,6 +306,7 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\UserInfo\userindex.cshtml" />
     <Content Include="Views\NewsDateil\ArticleDetails.cshtml" />
+    <Content Include="Views\UserInfo\Ziliao.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -83,7 +83,7 @@ namespace GY.Controllers
         }       
         #endregion
         #region 修改资料
-        [HttpPost]
+        //[HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Ziliao(UserInfo userInfo)
         {
