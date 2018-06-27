@@ -14,7 +14,9 @@ namespace GY.Controllers
         /// 实例化
         /// </summary>
         GYEntities db = new GYEntities();
+        //新闻
         NewsManager mv = new NewsManager();
+        //评论
         CommentsManager newsd = new CommentsManager();
         ReCommentManager renew = new ReCommentManager();
         // GET: NewsDateil
@@ -37,11 +39,13 @@ namespace GY.Controllers
             Session["nid"] = id;
             int n_id = Convert.ToInt32(Session["nid"]);
             var news = mv.GetNewsById(id);
+            Models.NewsViewMode vm = new NewsViewMode();
+            vm.news = news;
             if (news == null)
             {
                 return HttpNotFound();
             }
-            return View(news);
+            return View(vm);
         }
         #endregion
 
